@@ -1,0 +1,133 @@
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Booking System</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<header>
+    <h2>⚡ EV Charge Booking</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#stations">Stations</a>
+        <a href="#bookings">My Bookings</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Find Your EV Charging Station</h1>
+    <p>Search, select and book your charging slot easily.</p>
+    <a href="#stations" class="btn">Book Now</a>
+</section>
+
+<section id="stations">
+    <section id="map-section">
+    <h2>EV Charging Stations Map</h2>
+    <div id="map"></div>
+</section>
+    <h2>Available Charging Stations</h2>
+    <div id="station-list"></div>
+</section>
+
+<section id="bookings">
+    <h2>My Bookings</h2>
+    <div id="booking-list"></div>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+const map = L.map('map').setView([17.385, 78.4867], 11);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const mapStations = [
+    {
+        name: "Green Charge Station",
+        area: "Kompally",
+        position: [17.538, 78.486]
+    },
+    {
+        name: "Volt Point Station",
+        area: "Suchitra",
+        position: [17.515, 78.458]
+    },
+    {
+        name: "Eco Drive Station",
+        area: "Medchal",
+        position: [17.629, 78.481]
+    },
+    {
+        name: "City EV Station",
+        area: "Kukatpally",
+        position: [17.493, 78.399],
+    },
+
+        
+{
+    name: "City EV Station",
+    area: "Kukatpally",
+    position: [17.493, 78.399]
+},
+{
+    name: "Gachibowli EV Hub",
+    area: "Gachibowli",
+    position: [17.440, 78.348]
+},
+{
+    name: "Hitech City Charging",
+    area: "Hitech City",
+    position: [17.448, 78.376]
+},
+{
+    name: "Madhapur EV Point",
+    area: "Madhapur",
+    position: [17.448, 78.391]
+},
+{
+    name: "Uppal Charge Point",
+    area: "Uppal",
+    position: [17.401, 78.560]
+},
+{
+    name: "Secunderabad EV Hub",
+    area: "Secunderabad",
+    position: [17.440, 78.498]
+},
+{
+    name: "LB Nagar Charging",
+    area: "LB Nagar",
+    position: [17.346, 78.552]
+},
+{
+    name: "Mehdipatnam EV Station",
+    area: "Mehdipatnam",
+    position: [17.395, 78.440]
+},
+{
+    name: "Shamshabad EV Hub",
+    area: "Shamshabad",
+    position: [17.240, 78.429]
+}
+
+];
+
+mapStations.forEach(station => {
+    L.marker(station.position)
+        .addTo(map)
+        .bindPopup("<b>" + station.name + "</b><br>" + station.area);
+});
+</script>
+
+</body>
+</html>
+

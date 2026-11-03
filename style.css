@@ -1,0 +1,160 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7f4;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: #123b2a;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    color: #a8f06a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a8f06a;
+}
+
+/* Home section */
+.hero {
+    background: linear-gradient(120deg, #123b2a, #267447);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #a8f06a;
+    color: #123b2a;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section:not(.hero) {
+    padding: 50px 7%;
+}
+
+section h2 {
+    margin-bottom: 25px;
+    color: #123b2a;
+}
+
+/* Station cards */
+#station-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.station-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000015;
+}
+
+.station-card h3 {
+    color: #267447;
+    margin-bottom: 12px;
+}
+
+.station-card p {
+    margin: 10px 0;
+}
+
+.station-card button {
+    background: #123b2a;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.station-card button:hover {
+    background: #267447;
+}
+
+/* Booking list */
+#booking-list {
+    display: grid;
+    gap: 15px;
+}
+
+.booking-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #00000015;
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+#map-section {
+    padding: 30px;
+    text-align: center;
+    background: #f5f7fa;
+}
+
+#map-section h2 {
+    color: #172b4d;
+    margin-bottom: 15px;
+}
+
+#map {
+    height: 450px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
